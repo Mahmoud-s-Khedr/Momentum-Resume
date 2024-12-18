@@ -1,0 +1,25 @@
+{
+  "name": "momentum-resume",
+  "version": "0.1.0",
+  "description": "modern resume making as it should be",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mahmoud-s-Khedr/Momentum-Resume.git"
+  },
+  "keywords": [
+    "resume",
+    "nodejs",
+    "momentum-resume"
+  ],
+  "author": "Mahmoud S. Khedr",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Mahmoud-s-Khedr/Momentum-Resume/issues"
+  },
+  "homepage": "https://github.com/Mahmoud-s-Khedr/Momentum-Resume#readme"
+}
