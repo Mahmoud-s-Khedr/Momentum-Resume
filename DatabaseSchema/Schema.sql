@@ -22,6 +22,9 @@ CREATE TABLE "Users"(
     "AccountType" INT NOT NULL DEFAULT 0 -- 0: FreeUser, 1: PremiumUser , 2: Admin
 );
 
+CREATE INDEX "UsersIndexEmail" ON "Users" ("UserEmail");
+CREATE INDEX "UsersIndexPhone" ON "Users" ("UserMainPhone");
+
 -- Create the "UserAddress" table
 CREATE TABLE "UserAddress"(
     "AddressID" INT PRIMARY KEY AUTO_INCREMENT,
