@@ -7,8 +7,8 @@
 -- Description: This script creates the "Momentum-Resume" database and the required tables.
 
 -- Create the "Momentum-Resume" database
-CREATE DATABASE "Momentum-Resume";
-USE "Momentum-Resume";
+CREATE DATABASE "MomentumResume";
+USE "MomentumResume";
 
 -- Create the "Users" table #to be refactored and make account table
 CREATE TABLE "Users"(
@@ -24,6 +24,17 @@ CREATE TABLE "Users"(
 
 CREATE INDEX "UsersIndexEmail" ON "Users" ("UserEmail");
 CREATE INDEX "UsersIndexPhone" ON "Users" ("UserMainPhone");
+
+-- Create the "User Socials" table
+CREATE TABLE "UserSocials"(
+    "SocialID" INT PRIMARY KEY AUTO_INCREMENT,
+    "UserID" INT NOT NULL,
+    "SocialName" VARCHAR(50) NOT NULL,
+    "SocialLink" VARCHAR(255) NOT NULL,
+    FOREIGN KEY ("UserID") REFERENCES "Users"("UserID");
+);
+
+CREATE INDEX "UserSocialsIndex" ON "Users" ("UserID");
 
 -- Create the "UserAddress" table
 CREATE TABLE "UserAddress"(
@@ -85,7 +96,6 @@ CREATE TABLE "UserExperience" (
     "Position" VARCHAR(70) NOT NULL,
     "StartDate" DATE NOT NULL,
     "EndDate" DATE,
-    "Description" TEXT,
     FOREIGN KEY ("UserID") REFERENCES "Users"("UserID")
 );
 
@@ -175,6 +185,7 @@ CREATE TABLE "UserCourses" (
     "CourseID" INT PRIMARY KEY AUTO_INCREMENT,
     "UserID" INT NOT NULL,
     "CourseName" VARCHAR(120) NOT NULL,
+    "CourseProvider" VARCHAR(120) NOT NULL,
     "CourseDate" DATE NOT NULL,
     "CourseLink" VARCHAR(255),
     FOREIGN KEY ("UserID") REFERENCES "Users"("UserID")
