@@ -1,0 +1,5 @@
+- web Scraping (Linkedin as a target)
+- login using Linkedin and Google 
+- generate pdf and docs files 
+- inHouse auth
+- skills and schools database
